@@ -1,6 +1,9 @@
-FROM google/cloud-sdk
+FROM gcr.io/google.com/cloudsdktool/cloud-sdk:alpine
 
-RUN curl -fsSL https://deb.nodesource.com/setup_lts.x | bash - && \
- apt-get install -y nodejs build-essential
+# RUN apk --update add openjdk7-jre
+
+RUN gcloud components install core
+
+RUN apk add --update nodejs nodejs-npm
 
 RUN npm i -g nx

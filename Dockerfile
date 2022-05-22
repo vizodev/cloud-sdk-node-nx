@@ -4,6 +4,6 @@ FROM gcr.io/google.com/cloudsdktool/cloud-sdk:alpine
 
 RUN gcloud components install core
 
-RUN apk add --update nodejs nodejs-npm
+RUN apk add --update nodejs npm
 
 RUN npm i -g nx
